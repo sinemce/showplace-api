@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     placeName: { type: String, require: true},
-    location: { type: String, required: true },  
+    locationX: { type: String, required: true }, 
+    locationY: { type: String, required: true }, 
     category: [{
         type: Schema.Types.ObjectId,
         ref: 'category',

@@ -11,6 +11,8 @@ const mongoose = require('mongoose');
       Place: require('../models/place.model'),
       Category: require('../models/category.model'),
       Visitor: require('../models/visitor.model'),
-      Smile: require('../models/smile.model')
+      Smile: require('../models/smile.model'),
+      Restoration: require('../models/restoration.model'),
+      Guide: require('../models/guide.model')
     };
  

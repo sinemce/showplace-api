@@ -4,7 +4,7 @@ const Category = db.Category;
 module.exports = { 
     create,  
     getById,
-    getAll
+    getByParam
 };
 
 async function create(param){
@@ -16,10 +16,10 @@ async function getById(id){
     return await Category.findById(id);
 }
 
-
-async function getAll(){
-    return await Category.find();
+async function getByParam(param){
+    return await Category.find(param);
 }
+
 
 
 

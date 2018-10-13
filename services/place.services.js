@@ -3,8 +3,9 @@ const Place = db.Place;
 
 module.exports = { 
     create,  
+    update,
     getById,
-    getAll
+    getByParam    
 };
 
 async function create(param){
@@ -12,11 +13,32 @@ async function create(param){
     return await newPlace.save();
 }
 
+async function update(id, param){
+    const place = await Place.findById(id);
+    if(!place){
+        return "ups! Place not found"
+    }
+
+    Object.assign(place, param);
+    await place.save();
+}
+
+
 async function getById(id){
     return await Place.findById(id);
 }
 
-async function getAll(){
-    return await Place.find();
+async function getByParam(param){
+    return await Place.find(param);
 }
+
+
+
+async function nearPlaces(id, param){
+    
+
+}
+
+
+// dashboard
 
